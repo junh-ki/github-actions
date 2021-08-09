@@ -1,0 +1,26 @@
+# Basic dependabot.yml file with
+# minimum configuration for two package managers
+
+version: 2
+updates:
+  # Enable version updates for maven
+  - package-ecosystem: "maven"
+    # Look for `pom.xml` and `lock` files in the `root` directory
+    directory: "/"
+    # Check the npm registry for updates every day (weekdays)
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 10
+
+  # Enable version updates for Docker
+  - package-ecosystem: "docker"
+    # Look for a `Dockerfile` in the `root` directory
+    directory: "/"
+    # Check for updates once a week
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
