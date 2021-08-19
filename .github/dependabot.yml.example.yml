@@ -1,0 +1,57 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://help.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "12:00"
+      timezone: "Europe/Berlin"
+    reviewers:
+      - "holidu/search-team"
+    labels:
+      - "Docker Dependencies"
+    target-branch: "develop"
+    commit-message:
+      prefix: "Docker"
+      include: "scope" # prefix is followed by a list of the dependencies updated in the commit
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "12:00"
+      timezone: "Europe/Berlin"
+    reviewers:
+      - "holidu/search-team"
+    labels:
+      - "Github-actions Updates"
+    target-branch: "develop"
+    commit-message:
+      prefix: "GitHub-Actions"
+      include: "scope"
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "12:00"
+      timezone: "Europe/Berlin"
+    reviewers:
+      - "holidu/search-team"
+    labels:
+      - "Maven Dependencies"
+    target-branch: "develop"
+    commit-message:
+      prefix: "Maven"
+      include: "scope"
+    open-pull-requests-limit: 5
